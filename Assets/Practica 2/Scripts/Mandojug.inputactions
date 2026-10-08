@@ -172,7 +172,7 @@
                     "name": "",
                     "id": "d7559f5a-72cc-4536-948d-4f4ec714a7e8",
                     "path": "<Gamepad>/buttonEast",
-                    "interactions": "Hold(duration=0.3)",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Power",

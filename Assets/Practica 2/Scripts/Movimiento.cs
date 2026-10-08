@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 using UnityEngine.InputSystem.Interactions;
 
 public class Movimiento : MonoBehaviour
@@ -13,6 +14,8 @@ public class Movimiento : MonoBehaviour
     [Header("Importante")]
     private Vector3 movimiento;
     private Rigidbody rb;
+    private Renderer objetoRenderer;
+   
 
     private bool onsuelo = false;
     [SerializeField] LayerMask layersuelo;
@@ -24,7 +27,9 @@ public class Movimiento : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        objetoRenderer = GetComponent<Renderer>();
         rb.freezeRotation = true;
+        objetoRenderer.material.color = Color.teal;
         barrera.SetActive(false);
     }
 
@@ -59,37 +64,40 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-    //public void OnPower(InputAction.CallbackContext context)
-    //{
-    //    if (context.performed)
-    //    {
-    //        if (context.interaction is HoldInteraction)
-    //        {
-    //            barrera.SetActive(true);
-    //            Debug.Log("se activa");
-    //        }
-    //        else
-    //        {
-    //            barrera.SetActive(false);
+    public void OnPower(InputValue value)
+    {
+        barrera.SetActive(true);
+        StartCoroutine(Poder());
+    }
 
-    //            Debug.Log("Se desactiva");
-    //        }
-    //    }
-    //    else Debug.Log("NO lo encuentra");
-    //}
-
+    IEnumerator Poder()
+    {
+        Debug.Log("se activa");
+        yield return new WaitForSeconds(4f);
+        barrera.SetActive(false);
+    }
     private void FixedUpdate()
     {
         Vector3 move = new Vector3(movimiento.x, 0 , movimiento.z);
         transform.Translate (move *speed* Time.deltaTime);
 
         onsuelo = Physics.Raycast( transform.position, Vector3.down, distsuelo, layersuelo );
-        
     }
 
     public void OnTest(InputValue value)
     {
         Debug.LogError("ñooooow");
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            objetoRenderer.material.color = Color.red;
+            Debug.Log("hace cosas");
+        }
+        else 
+        objetoRenderer.material.color = Color.teal;
     }
 
 
