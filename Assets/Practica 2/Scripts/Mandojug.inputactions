@@ -45,6 +45,16 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+                },
+                {
+                    "name": "Power",
+                    "type": "Button",
+                    "id": "e6f6ab47-6822-4ef9-a1f3-6b0c84e9cbe3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -84,7 +94,7 @@
                 {
                     "name": "left",
                     "id": "c3cf5dc7-9228-4d99-ad6d-6fb8491ead9c",
-                    "path": "<Gamepad>/rightStick/right",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -95,7 +105,7 @@
                 {
                     "name": "right",
                     "id": "8a89fbcb-5d59-4bc7-b986-95ea98a20904",
-                    "path": "<Gamepad>/rightStick/left",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -106,7 +116,7 @@
                 {
                     "name": "forward",
                     "id": "fb3dfda9-6e18-4383-8b84-2886347d1ddf",
-                    "path": "<Gamepad>/rightStick/up",
+                    "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -117,7 +127,7 @@
                 {
                     "name": "backward",
                     "id": "3e950acf-1bc8-4d4a-b79e-c988bee83652",
-                    "path": "<Gamepad>/rightStick/down",
+                    "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -139,7 +149,7 @@
                 {
                     "name": "",
                     "id": "ae30e6f9-8c8d-4b9f-98a5-358f16d9fcd0",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -150,11 +160,22 @@
                 {
                     "name": "",
                     "id": "41d14fc9-2568-4f91-b9bb-bf742cca8b4a",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Dom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7559f5a-72cc-4536-948d-4f4ec714a7e8",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "Hold(duration=0.3)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Power",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
