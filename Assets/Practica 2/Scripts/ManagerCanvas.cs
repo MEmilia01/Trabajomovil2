@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class ManagerCanvas : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class ManagerCanvas : MonoBehaviour
     [Header("Extras")]
     public TextMeshProUGUI mentexto;
     public GameObject salirmen;
+    public int menfinal;
+    public bool siono;
+    
 
 
     void Start()
@@ -21,7 +25,26 @@ public class ManagerCanvas : MonoBehaviour
 
     public void CambiarMensaje()
     {
-        
+        if(siono) { menfinal = 2; }
+
+        switch (menfinal)
+        {
+            case 0:
+                mentexto.text = "Happy happy happy (yeppie feliz)";
+                break;
+            case 1:
+                mentexto.text = "Se necesita un mando para funcionar";
+                break;
+            case 2:
+                mentexto.text = "Muy mal no quieras sobrevivir";
+                break;
+        }
+    }
+
+    IEnumerator AparicionBoton()
+    {
+        yield return new WaitForSeconds(4f);
+        salirmen.SetActive(true);
     }
 
 
@@ -32,6 +55,8 @@ public class ManagerCanvas : MonoBehaviour
         menus.SetActive(true);
         lore.SetActive(false);
         comados.SetActive(false);
+
+        siono = false;
     }
     public void ActivarMensaje()
     {
@@ -40,7 +65,9 @@ public class ManagerCanvas : MonoBehaviour
         lore.SetActive(false);
         comados.SetActive(false);
 
+        salirmen.SetActive(false);
         CambiarMensaje();
+        StartCoroutine(AparicionBoton());
     }
     public void ActivarLore()
     {
@@ -48,6 +75,7 @@ public class ManagerCanvas : MonoBehaviour
         menus.SetActive(false);
         lore.SetActive(true);
         comados.SetActive(false);
+        siono = true;
     }
     public void ActivarComandos() 
     {

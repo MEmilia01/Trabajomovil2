@@ -16,8 +16,8 @@ public class Movimiento : MonoBehaviour
     private Rigidbody rb;
     private Renderer objetoRenderer;
     public ManagerCanvas canvas;
-   
 
+    [Header("Suelo logica")]
     private bool onsuelo = false;
     [SerializeField] LayerMask layersuelo;
     [SerializeField] float distsuelo = 1.05f;
@@ -73,23 +73,21 @@ public class Movimiento : MonoBehaviour
 
     IEnumerator Poder()
     {
-        Debug.Log("se activa");
         yield return new WaitForSeconds(4f);
         barrera.SetActive(false);
     }
 
     public void OnTest(InputValue value)
     {
-        canvas.ActivarMensaje();
-        Debug.LogError("ñooooow");
+        Debug.Log("ñooooow");
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            canvas.ActivarMenus();
             objetoRenderer.material.color = Color.red;
-            Debug.Log("hace cosas");
         }
         else 
         objetoRenderer.material.color = Color.teal;
