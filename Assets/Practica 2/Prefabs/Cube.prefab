@@ -451,6 +451,7 @@ MonoBehaviour:
   speed: 2
   jump: 6
   fall: 3
+  canvas: {fileID: 3834855740979785399, guid: 75557e68442cb664bb857a057930a0ee, type: 3}
   layersuelo:
     serializedVersion: 2
     m_Bits: 8

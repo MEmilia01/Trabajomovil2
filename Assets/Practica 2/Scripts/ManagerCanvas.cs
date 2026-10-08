@@ -56,5 +56,12 @@ public class ManagerCanvas : MonoBehaviour
       lore.SetActive(false);
       comados.SetActive(true);  
     }
+    public void ActivarJugador() 
+    {
+      mensaje.SetActive(false);  
+      menus.SetActive(false);  
+      lore.SetActive(false);
+      comados.SetActive(false);  
+    }
 
 }

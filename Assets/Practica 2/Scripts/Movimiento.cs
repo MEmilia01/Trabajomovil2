@@ -15,6 +15,7 @@ public class Movimiento : MonoBehaviour
     private Vector3 movimiento;
     private Rigidbody rb;
     private Renderer objetoRenderer;
+    public ManagerCanvas canvas;
    
 
     private bool onsuelo = false;
@@ -86,6 +87,7 @@ public class Movimiento : MonoBehaviour
 
     public void OnTest(InputValue value)
     {
+        canvas.ActivarMenus();
         Debug.LogError("ñooooow");
     }
 
