@@ -1305,6 +1305,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1809173944391758505, guid: 75557e68442cb664bb857a057930a0ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4025919013576032009, guid: 75557e68442cb664bb857a057930a0ee, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1385,6 +1389,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4391190824222593517, guid: 75557e68442cb664bb857a057930a0ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9019597905273753319, guid: 75557e68442cb664bb857a057930a0ee, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1457,7 +1465,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1942191011}
   - {fileID: 6795846304003245995}
-  - {fileID: 1367151802}
   - {fileID: 1866573526}
   - {fileID: 1008328611527520987}
+  - {fileID: 1367151802}
   - {fileID: 251886754}

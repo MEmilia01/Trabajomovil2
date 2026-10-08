@@ -29,8 +29,8 @@ public class Movimiento : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         objetoRenderer = GetComponent<Renderer>();
-        rb.freezeRotation = true;
         objetoRenderer.material.color = Color.teal;
+        rb.freezeRotation = true;
         barrera.SetActive(false);
     }
 
@@ -77,17 +77,10 @@ public class Movimiento : MonoBehaviour
         yield return new WaitForSeconds(4f);
         barrera.SetActive(false);
     }
-    private void FixedUpdate()
-    {
-        Vector3 move = new Vector3(movimiento.x, 0 , movimiento.z);
-        transform.Translate (move *speed* Time.deltaTime);
-
-        onsuelo = Physics.Raycast( transform.position, Vector3.down, distsuelo, layersuelo );
-    }
 
     public void OnTest(InputValue value)
     {
-        canvas.ActivarMenus();
+        canvas.ActivarMensaje();
         Debug.LogError("ñooooow");
     }
 
@@ -102,5 +95,13 @@ public class Movimiento : MonoBehaviour
         objetoRenderer.material.color = Color.teal;
     }
 
+    private void FixedUpdate()
+    {
+        Vector3 move = new Vector3(movimiento.x, 0 , movimiento.z);
+        transform.Translate (move *speed* Time.deltaTime);
+
+        onsuelo = Physics.Raycast( transform.position, Vector3.down, distsuelo, layersuelo );
+
+    }
 
 }
