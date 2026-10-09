@@ -47,7 +47,7 @@ public class ManagerCanvas : MonoBehaviour
         salirmen.SetActive(true);
     }
 
-
+    public void Salir() { }
 
     public void ActivarMenus()
     {

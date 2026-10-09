@@ -79,6 +79,7 @@ public class Movimiento : MonoBehaviour
 
     public void OnTest(InputValue value)
     {
+        canvas.ActivarMenus();
         Debug.Log("ñooooow");
     }
 
@@ -86,7 +87,6 @@ public class Movimiento : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            canvas.ActivarMenus();
             objetoRenderer.material.color = Color.red;
         }
         else 

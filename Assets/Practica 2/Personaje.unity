@@ -1022,6 +1022,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1367151802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1602675522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3834855740979785399, guid: 75557e68442cb664bb857a057930a0ee, type: 3}
+  m_PrefabInstance: {fileID: 1008328611527520987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb686945dd37474aabf16502721d6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ManagerCanvas
 --- !u!1 &1643692280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,6 +1461,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2384860572423501510, guid: 8d28e67b902834749881ed624865f5c9, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1602675522}
     - target: {fileID: 7311644502618053996, guid: 8d28e67b902834749881ed624865f5c9, type: 3}
       propertyPath: m_Name
       value: Cube
