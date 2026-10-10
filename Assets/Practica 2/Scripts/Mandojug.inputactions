@@ -55,6 +55,26 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+                },
+                {
+                    "name": "MoveUi",
+                    "type": "Value",
+                    "id": "a87a0f7d-6c80-4b37-94ac-ba38a24fb1a9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
+                },
+                {
+                    "name": "SelectUi",
+                    "type": "Button",
+                    "id": "c6ce3136-01ec-43af-8a28-17b7328675df",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -159,6 +179,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e8e71899-c9b4-4c8f-a636-9b3ebf70d6ce",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "41d14fc9-2568-4f91-b9bb-bf742cca8b4a",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
@@ -176,6 +207,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Power",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f5f56679-2920-486f-974e-2fde446229b8",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveUi",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c39adaa5-534b-4001-8c3f-8ff1ae238697",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectUi",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

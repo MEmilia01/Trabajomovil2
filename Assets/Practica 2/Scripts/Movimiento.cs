@@ -80,8 +80,10 @@ public class Movimiento : MonoBehaviour
     public void OnTest(InputValue value)
     {
         canvas.ActivarMenus();
-        Debug.Log("ñooooow");
     }
+
+    public void OnMoveUi()
+    { Debug.Log("funciona"); }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -99,7 +101,6 @@ public class Movimiento : MonoBehaviour
         transform.Translate (move *speed* Time.deltaTime);
 
         onsuelo = Physics.Raycast( transform.position, Vector3.down, distsuelo, layersuelo );
-
     }
 
 }

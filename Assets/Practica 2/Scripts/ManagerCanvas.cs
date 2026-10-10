@@ -1,6 +1,7 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ManagerCanvas : MonoBehaviour
 {
@@ -12,15 +13,27 @@ public class ManagerCanvas : MonoBehaviour
 
     [Header("Extras")]
     public TextMeshProUGUI mentexto;
-    public GameObject salirmen;
+    public GameObject okiboton;
+    public GameObject continuarboton;
+    public GameObject hacerboton;
+    public GameObject mensajeboton;
     public int menfinal;
     public bool siono;
+    
     
 
 
     void Start()
     {
         ActivarComandos();
+    }
+
+    private void SeleccionarBoton(GameObject boton)
+    {
+        if (boton != null && boton.activeInHierarchy)
+        {
+            EventSystem.current.SetSelectedGameObject(boton);
+        }
     }
 
     public void CambiarMensaje()
@@ -39,15 +52,18 @@ public class ManagerCanvas : MonoBehaviour
                 mentexto.text = "Muy mal no quieras sobrevivir";
                 break;
         }
+        StartCoroutine(AparicionBoton());
     }
 
     IEnumerator AparicionBoton()
     {
         yield return new WaitForSeconds(4f);
-        salirmen.SetActive(true);
+        Debug.Log("sale del bucle");
+        mensajeboton.SetActive(true);
+        SeleccionarBoton(mensajeboton);
     }
 
-    public void Salir() { }
+    public void Salir() { Application.Quit(); }
 
     public void ActivarMenus()
     {
@@ -57,6 +73,7 @@ public class ManagerCanvas : MonoBehaviour
         comados.SetActive(false);
 
         siono = false;
+        SeleccionarBoton(continuarboton);
     }
     public void ActivarMensaje()
     {
@@ -65,9 +82,8 @@ public class ManagerCanvas : MonoBehaviour
         lore.SetActive(false);
         comados.SetActive(false);
 
-        salirmen.SetActive(false);
+        mensajeboton.SetActive(false);
         CambiarMensaje();
-        StartCoroutine(AparicionBoton());
     }
     public void ActivarLore()
     {
@@ -76,20 +92,26 @@ public class ManagerCanvas : MonoBehaviour
         lore.SetActive(true);
         comados.SetActive(false);
         siono = true;
+
+        SeleccionarBoton(hacerboton);
     }
     public void ActivarComandos() 
     {
-      mensaje.SetActive(false);  
-      menus.SetActive(false);  
-      lore.SetActive(false);
-      comados.SetActive(true);  
+        mensaje.SetActive(false);  
+        menus.SetActive(false);  
+        lore.SetActive(false);
+        comados.SetActive(true);
+
+        SeleccionarBoton(okiboton);
     }
     public void ActivarJugador() 
     {
-      mensaje.SetActive(false);  
-      menus.SetActive(false);  
-      lore.SetActive(false);
-      comados.SetActive(false);  
+        mensaje.SetActive(false);  
+        menus.SetActive(false);  
+        lore.SetActive(false);
+        comados.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
 }
