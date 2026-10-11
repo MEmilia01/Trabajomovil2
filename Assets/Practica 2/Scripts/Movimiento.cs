@@ -82,8 +82,7 @@ public class Movimiento : MonoBehaviour
         canvas.ActivarMenus();
     }
 
-    public void OnMoveUi()
-    { Debug.Log("funciona"); }
+    public void OnMoveUi()  {  }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -95,8 +94,25 @@ public class Movimiento : MonoBehaviour
         objetoRenderer.material.color = Color.teal;
     }
 
+    public void Mandos()
+    {
+        if (Gamepad.current != null)
+        {
+            Debug.Log("Hay un mando conectado: " + Gamepad.current.displayName);
+            return;
+        }
+        else
+        {
+            Debug.Log("No hay ningún mando conectado.");
+            canvas.menfinal = 1;
+            canvas.ActivarMensaje();
+        }
+    }
+
     private void FixedUpdate()
     {
+        Mandos();
+
         Vector3 move = new Vector3(movimiento.x, 0 , movimiento.z);
         transform.Translate (move *speed* Time.deltaTime);
 

@@ -19,8 +19,7 @@ public class ManagerCanvas : MonoBehaviour
     public GameObject mensajeboton;
     public int menfinal;
     public bool siono;
-    
-    
+    private bool aplicacionEnSegundoPlano;
 
 
     void Start()
@@ -33,7 +32,20 @@ public class ManagerCanvas : MonoBehaviour
         if (boton != null && boton.activeInHierarchy)
         {
             EventSystem.current.SetSelectedGameObject(boton);
+            Debug.Log("este es el boton que esta siendo obtenido: " + boton);
         }
+    }
+    private void OnApplicationPause(bool pausada)
+    {
+        aplicacionEnSegundoPlano = pausada;
+
+        if (pausada)
+        {
+            Debug.Log("se paso a segundo plano");
+            menfinal = 3;
+            ActivarMensaje();
+        }
+        else { return; }
     }
 
     public void CambiarMensaje()
@@ -50,6 +62,9 @@ public class ManagerCanvas : MonoBehaviour
                 break;
             case 2:
                 mentexto.text = "Muy mal no quieras sobrevivir";
+                break;
+            case 3:
+                mentexto.text = "Has dejado el juego en segundo plano";
                 break;
         }
         StartCoroutine(AparicionBoton());
